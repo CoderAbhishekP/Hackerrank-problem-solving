@@ -1,0 +1,28 @@
+strr=input()
+
+ls=list(strr)    #Converting the string to list type
+
+bs=[]
+
+for i in range(0,len(ls)):    #creating a new list which consist of only distinct characters of given string
+    if ls[i] not in bs:
+        bs.append(ls[i])
+ct=0
+
+
+for i in range(0,len(bs)):    #counting the count of distinct characters by comparing the both lists
+    count=0
+
+    for j in range(0,len(ls)):
+
+        if bs[i]==ls[j]:
+
+            count+=1       
+    if count%2!=0:
+        ct+=1
+
+if ct<=1:                         #So basic logic for this problem is if distict character of the given string makes a pair or are in even count and only contain only one single distinct character of odd count then it is a YES. 
+    print('YES')
+else:
+    print('NO')    
+
